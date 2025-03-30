@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Tool, ExternalLink } from 'lucide-react';
+import { Wrench, ExternalLink } from 'lucide-react';
 
 interface FreeToolItem {
   title: string;
@@ -59,9 +59,9 @@ const Tools: React.FC = () => {
         </p>
         
         <div className="border border-dashed border-black p-3 bg-yellow-50 font-mono text-center">
-          <Tool className="inline-block mr-2" />
+          <Wrench className="inline-block mr-2" />
           <span>All tools are open source and free to use</span>
-          <Tool className="inline-block ml-2" />
+          <Wrench className="inline-block ml-2" />
         </div>
       </div>
       
