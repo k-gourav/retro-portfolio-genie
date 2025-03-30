@@ -1,24 +1,37 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
-const NotFound = () => {
-  const location = useLocation();
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Home } from 'lucide-react';
 
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
+const NotFound: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="max-w-lg mx-auto text-center">
+      <div className="retro-header">
+        <h1 className="text-2xl font-pixel">404 Error</h1>
+      </div>
+      
+      <div className="retro-section">
+        <div className="font-mono text-6xl mb-4">404</div>
+        <h2 className="font-retro text-2xl text-retro-red mb-4">Page Not Found</h2>
+        
+        <div className="border-2 border-black p-4 bg-yellow-100 mb-6">
+          <p className="font-mono mb-2">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+          <p className="font-mono">Please check the URL or return to the homepage.</p>
+        </div>
+        
+        <div className="flex justify-center">
+          <Link 
+            to="/" 
+            className="retro-button font-retro text-xl no-underline text-black flex items-center"
+          >
+            <Home className="mr-2" size={18} />
+            Back to Homepage
+          </Link>
+        </div>
+      </div>
+      
+      <div className="mt-6 opacity-50">
+        <img src="https://i.imgur.com/JnnyJYe.gif" alt="Under Construction" className="h-12 mx-auto" />
       </div>
     </div>
   );
